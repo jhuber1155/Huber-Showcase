@@ -6,6 +6,7 @@
 body{
      background-image: url(https://www.pexels.com/video/digital-projection-of-abstract-geometrical-lines-3129671/);
     /* >Video by Pressmaster from www.pexels.com< */
+    background-image: url(../images/img-geometrical.png);
 }
 
 /*Full credit to the following for help on applying the background video: Chris Coyier at CSS-Tricks (www.css-tricks.com/full-page-background-video-styles/), Dudley Story at The New Code (http://thenewcode.com/777/Create-Fullscreen-HTML5-Page-Background-Video), and StackOverflow with User: CutoverRooster (https://stackoverflow.com/users/2381648/cutoverrooster) (https://stackoverflow.com/questions/16687382/background-video-that-resizes-to-always-fit-the-browser)*/
@@ -32,7 +33,6 @@ body{
 }
 
 .background-image{
-    background-image: url(../images/img-geometrical.png);
     display: none;
 }
 
@@ -58,14 +58,12 @@ body{
 
     /*Credit to W3schools on understanding background images (https://www.w3schools.com/css/css_rwd_images.asp)*/
     .background-image{
-        display: block;
-        position: absolute;
-        width: auto;
-        height: auto;
+        background-repeat: no-repeat;
+        background-size: cover;
         padding: 0;
-        margin: -10%;
-        left: 0px;
-        top: 0px;
+        margin: 0;
+        overflow: hidden;
+        z-index: -1;
     }
 }
 
