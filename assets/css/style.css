@@ -18,7 +18,7 @@ body{
     margin: 0;
     left: 0px;
     top: 0px;
-    z-index: 100;
+    z-index: -1;
     overflow: hidden;
 }
 
@@ -31,6 +31,11 @@ body{
 
 }
 
+.background-image{
+    background-image: url(../images/img-geometrical.png);
+    display: none;
+}
+
 .row {
     display: flex;
     flex-direction: row;
@@ -41,4 +46,29 @@ body{
     justify-content: center;
 }
 
-.card-column
+.card-column {
+
+}
+
+@media screen and (max-width: 928px){
+
+    .background-video{
+        display: none;
+    }
+
+    /*Credit to W3schools on understanding background images (https://www.w3schools.com/css/css_rwd_images.asp)*/
+    .background-image{
+        display: block;
+        position: absolute;
+        width: auto;
+        height: auto;
+        padding: 0;
+        margin: -10%;
+        left: 0px;
+        top: 0px;
+    }
+}
+
+@media screen and (max-width: 728px){
+    
+}
