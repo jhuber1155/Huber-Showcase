@@ -125,17 +125,6 @@ p{
     justify-content: space-evenly;
 }
 
-/*Allow for elements in the flex row to evenly space themselve when the screen size shrinks due to RSS*/
-.card-column {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
-
-.flex {
-    flex: 1 0 auto;
-}
-
 /*Created a glow effect for all clickable links for continuity reasons*/
 .glow:hover{
     box-shadow: 5px 5px 10px var(--green);
@@ -208,6 +197,10 @@ p{
     border: darkgray outset 5px;
 }
 
+.first-image{
+    flex: 1 0 100%;
+}
+
 /*Defining the media size and new interactions with the website on a smaller screen. The image will now be displayed instead of the video.*/
 
 @media screen and (max-width: 928px){
@@ -228,13 +221,18 @@ p{
     }
 /*moves the nav section to a more manageable place for tablet and mobile users*/
     ul{
-        justify-content:center;
+        justify-content:space-around;
     }
 
     li{
         margin-top: 20px;
         margin-bottom: 20px;
     }
+
+    .showcase-image{
+        flex: 1 0 100%;
+    }
+
 }
 
 @media screen and (max-width: 728px){
