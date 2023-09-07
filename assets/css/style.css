@@ -1,4 +1,9 @@
-/* rgb(11, 235, 217);*/
+/*creating some variables for repeat colors*/
+:root {
+    --gray: #1d1f1c;
+    --green: rgb(11, 235, 217);
+}
+
 
 *{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -47,7 +52,7 @@ h1 {
     font-size: 56px;
 }
 
-/*making the nav bar sticky to the top of the screen on scroll*/
+/*making the nav bar sticky to the top of the screen on scroll and will stop when it reaches the top of the showcase*/
 nav {
     position: sticky;
     top: 0;
@@ -57,28 +62,26 @@ nav {
     margin: 10px;
     z-index: 2;
 }
-/*Creating a flexbox to help make links manageable when on RSS screen*/
+
+/*Creating a flexbox to help make links easily clickable when on RSS screen*/
 ul {
-    width: auto;
-    height: auto;
     padding: 0px;
     margin: 0px;
     list-style-type: none;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex: 1 0 30%
 }
 
+/*Created boxes for users to click on and they will glow when hovered upon. The default link colors have been changed for visibility reasons.*/
 li {
     display: inline-block;
-    width: auto;
-    height: auto;
     padding: 10px;
-    margin: 5px;
+    margin: 0px;
     text-align: center;
     color: white;
     font-size: xx-large;
-    background-color: #1d1f1c;
-    border: #1d1f1c outset 5px;
+    background-color: var(--gray);
+    border: var(--gray) outset 5px;
 }
 
 a:link {
@@ -89,21 +92,26 @@ a:visited {
     color: darkviolet;
 }
 
+/*Created foundation for flexboxes in the proceeding element articles so they flex when the screen sizes change*/
 aside {
     position: relative;
     justify-content: space-evenly;
     width: 100%;
     height: auto;
-    margin-top: 10px;
-    color: white;
+    margin-top: 40px;
 }
 
+/*Made sure the images and photos would fit upon screen size changes*/
+article{
+    height: auto;
+}
+
+/*Continued color theme for text*/
 p{
     position: relative;
+    margin-top: 50px;
     font-size: x-large;
-    width: auto;
-    height: auto;
-    color: white;
+    color: darkgoldenrod;
 }
 
 /*Creating a flexbox to allow for the images and links to resize as they are viewed on different screen sizes*/
@@ -117,6 +125,7 @@ p{
     justify-content: space-evenly;
 }
 
+/*Allow for elements in the flex row to evenly space themselve when the screen size shrinks due to RSS*/
 .card-column {
     display: flex;
     flex-direction: column;
@@ -127,22 +136,35 @@ p{
     flex: 1 0 auto;
 }
 
+/*Created a glow effect for all clickable links for continuity reasons*/
+.glow:hover{
+    box-shadow: 5px 5px 10px var(--green);
+}
+
+/*Created a centered image to immediately grab the users attention. As it is the only project currently done, a link has been provided below the image as well*/
 .horiseon {
     display: block;
     margin-top: 7%;
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    width: 40%;
-    height: 70%;
+    width: 80%;
+    height: 80%;
 }
 
-.fig-text{
-    font-size: larger;
+/*A link allowing the user to travel to the webpage and inspect it if they so choose to*/
+.fig-text {
+    font-size: 32px;
     text-align: center;
     color: darkgoldenrod;
 }
 
+/*Gave the link a glowing effect to let the user know the link is clickable and will redirect them*/
+.fig-shadow:hover {
+    text-shadow: 1px 1px 2px var(--green);
+}
+
+/*Resized all placeholder images so they would fit in all screen sizes with some space between each article*/
 .showcase-image{
     margin: 0px;
     padding: 0px;
@@ -159,6 +181,7 @@ p{
     align-content: center;
 }
 
+/*Used to give some breathing room to the personal section (about me, contact me, etc.) Also resized a photo and rounded the edges and gave both sections a gray background to fit with color scheme*/
 .personality {
     margin: 10px;
     padding: 20px;
@@ -166,27 +189,30 @@ p{
     flex: 1 0 20%
 }
 
-.zoom{
+#zoom{
     display: block;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 50%;
 }
 
 #about-me{
-    padding: 10px;
-    color: gold;
-    background-color: #1d1f1c;
+    padding: 10px 0px 125px 0px;
+    background-color: var(--gray);
     border: darkgray outset 5px;
 }
 
-#zoom {
-    border-radius: 50%;
+#contact-me{
+    padding: 10px 0px 100px 0px;
+    background-color: var(--gray);
+    border: darkgray outset 5px;
 }
 
 /*Defining the media size and new interactions with the website on a smaller screen. The image will now be displayed instead of the video.*/
 
 @media screen and (max-width: 928px){
 
+/*The video will be hidden and instead a screenshot will display in the name of efficiency and bandwitdth for certain users*/
     .background-video{
         display: none;
     }
@@ -200,7 +226,7 @@ p{
         overflow: hidden;
         z-index: -1;
     }
-
+/*moves the nav section to a more manageable place for tablet and mobile users*/
     ul{
         justify-content:center;
     }
