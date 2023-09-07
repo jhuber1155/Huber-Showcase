@@ -121,10 +121,6 @@ p{
     flex-wrap: wrap;
 }
 
-.justify-content {
-    justify-content: space-evenly;
-}
-
 /*Created a glow effect for all clickable links for continuity reasons*/
 .glow:hover{
     box-shadow: 5px 5px 10px var(--green);
@@ -197,10 +193,6 @@ p{
     border: darkgray outset 5px;
 }
 
-.first-image{
-    flex: 1 0 100%;
-}
-
 /*Defining the media size and new interactions with the website on a smaller screen. The image will now be displayed instead of the video.*/
 
 @media screen and (max-width: 928px){
@@ -210,7 +202,6 @@ p{
         display: none;
     }
 
-   
     .background-image{
         background-repeat: no-repeat;
         background-size: cover;
@@ -219,6 +210,7 @@ p{
         overflow: hidden;
         z-index: -1;
     }
+
 /*moves the nav section to a more manageable place for tablet and mobile users*/
     ul{
         justify-content:space-around;
@@ -232,9 +224,4 @@ p{
     .showcase-image{
         flex: 1 0 100%;
     }
-
-}
-
-@media screen and (max-width: 728px){
-    
 }
